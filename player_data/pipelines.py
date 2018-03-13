@@ -44,6 +44,7 @@ class PlayerPipeline(object):
     def insert_player_data(self, item):
         values = (item['name'], item['g'], item['pts'],item['trb'],item['ast'],item['fg'],item['fg3'],item['ft'],item['efg'],item['per'],item['ws'])
 
-        sql = 'INSERT INTO players_data (name,g,pts,trb,ast,fg,fg3,ft,efg,per,ws) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
+        sql = 'INSERT INTO players_data (name,g,pts,trb,ast,fg,fg3,ft,efg,per,ws) \
+        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
         self.db_cur.execute(sql, values)
         self.db_conn.commit()
